@@ -1,7 +1,14 @@
 def get_num_words(book_contents):
     words = book_contents.split()
     count = len(words)
-    return count
+    word_dict = {}
+    for w in words:
+        w = w.lower()
+        if w not in word_dict:
+            word_dict[w] = 1
+        else:
+            word_dict[w] += 1
+    return count, word_dict
 
 def get_character_count(book_contents):
     character_count = {}
